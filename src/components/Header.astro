@@ -1,0 +1,126 @@
+---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+import { getAlternatePaths, locales, getLocaleLabel } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const alternates = getAlternatePaths(Astro.url.pathname);
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a href={locale === 'en' ? '/' : `/${locale}/`} class="logo">
+      <span class="logo-text">Sagascript</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#features">{t('nav.features', locale)}</a>
+      <a href="#privacy">{t('nav.privacy', locale)}</a>
+      <a href="#download">{t('nav.download', locale)}</a>
+
+      <span class="lang-switcher" aria-label={t('nav.lang.aria', locale)}>
+        {locales.map((l, i) => (
+          <>
+            {i > 0 && <span class="lang-sep">/</span>}
+            {l === locale ? (
+              <span class="lang-active">{getLocaleLabel(l)}</span>
+            ) : (
+              <a href={alternates[l]} class="lang-link">{getLocaleLabel(l)}</a>
+            )}
+          </>
+        ))}
+      </span>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(26, 26, 46, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  .logo {
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  nav a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  nav a:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 8px;
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+
+  .lang-sep {
+    color: var(--text-muted);
+  }
+
+  .lang-active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .lang-link {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .lang-link:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      gap: 14px;
+    }
+
+    .lang-switcher {
+      margin-left: 4px;
+      padding-left: 10px;
+    }
+  }
+</style>

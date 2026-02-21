@@ -1,0 +1,109 @@
+---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const downloadUrl = 'https://github.com/Magnus-Gille/sagascript/releases/latest';
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>{t('hero.headline', locale)}</h1>
+    <p class="subhead">{t('hero.subhead', locale)}</p>
+    <div class="cta-row">
+      <a href={downloadUrl} class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        {t('hero.cta.mac', locale)}
+      </a>
+      <span class="btn btn-muted">
+        {t('hero.cta.windows', locale)}
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subhead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  .btn-muted {
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    cursor: default;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding-top: 100px;
+      padding-bottom: 48px;
+    }
+  }
+</style>

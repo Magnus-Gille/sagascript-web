@@ -1,0 +1,53 @@
+---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+import { getAlternatePaths } from '../i18n/utils';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternates = getAlternatePaths(Astro.url.pathname);
+const ogLocale = locale === 'sv' ? 'sv_SE' : locale === 'no' ? 'nb_NO' : 'en_US';
+const htmlLang = locale === 'sv' ? 'sv' : locale === 'no' ? 'nb' : 'en';
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{t('meta.title', locale)}</title>
+    <meta name="description" content={t('meta.description', locale)} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={new URL(alternates.en, Astro.site)} />
+    <link rel="alternate" hreflang="sv" href={new URL(alternates.sv, Astro.site)} />
+    <link rel="alternate" hreflang="nb" href={new URL(alternates.no, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, Astro.site)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t('meta.title', locale)} />
+    <meta property="og:description" content={t('meta.description', locale)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:image" content={new URL('/images/og-image.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t('meta.title', locale)} />
+    <meta name="twitter:description" content={t('meta.description', locale)} />
+    <meta name="twitter:image" content={new URL('/images/og-image.png', Astro.site)} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
