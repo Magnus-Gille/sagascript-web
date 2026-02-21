@@ -2,7 +2,7 @@ export const translations = {
   en: {
     // Meta
     'meta.title': 'Sagascript — Private Voice Dictation',
-    'meta.description': 'Lightweight desktop app for voice dictation. Press a hotkey, speak, text appears. Local transcription — your voice never leaves your device.',
+    'meta.description': 'Free, open-source desktop app for voice dictation. Press a hotkey, speak, text appears. Local transcription — your voice never leaves your device.',
 
     // Nav
     'nav.home': 'Home',
@@ -13,7 +13,7 @@ export const translations = {
 
     // Hero
     'hero.headline': 'Dictate anywhere. Privately.',
-    'hero.subhead': 'A lightweight desktop app that lives in your system tray. Press a hotkey, speak, and text appears in any application. Local transcription — no cloud, no internet required.',
+    'hero.subhead': 'A lightweight, open-source desktop app that lives in your system tray. Press a hotkey, speak, and text appears in any application. Local transcription — no cloud, no internet required. Free forever.',
     'hero.cta.mac': 'Download for macOS',
     'hero.cta.windows': 'Download for Windows',
 
@@ -39,7 +39,7 @@ export const translations = {
     'privacy.telemetry.desc': 'No analytics, no usage tracking, no data collection of any kind. The app doesn\'t phone home.',
     'privacy.permissions.title': 'Only 2 permissions',
     'privacy.permissions.desc': 'Microphone (to hear you) and Accessibility (to paste text). That\'s it. No Full Disk Access, no Location, no Camera.',
-    'privacy.opensource': 'Don\'t take our word for it — review the source.',
+    'privacy.opensource': 'Sagascript is open source and free forever. Don\'t take our word for it — review the code.',
     'privacy.github': 'View on GitHub',
 
     // Download
@@ -56,7 +56,7 @@ export const translations = {
 
   sv: {
     'meta.title': 'Sagascript — Privat röstdiktering',
-    'meta.description': 'Lättviktig skrivbordsapp för röstdiktering. Tryck på en snabbtangent, tala, text dyker upp. Lokal transkribering — din röst lämnar aldrig din enhet.',
+    'meta.description': 'Gratis skrivbordsapp med öppen källkod för röstdiktering. Tryck på en snabbtangent, tala, text dyker upp. Lokal transkribering — din röst lämnar aldrig din enhet.',
 
     'nav.home': 'Hem',
     'nav.features': 'Funktioner',
@@ -65,7 +65,7 @@ export const translations = {
     'nav.lang.aria': 'Byt språk',
 
     'hero.headline': 'Diktera var som helst. Privat.',
-    'hero.subhead': 'En lättviktig skrivbordsapp som lever i systemfältet. Tryck på en snabbtangent, tala, och text dyker upp i valfri applikation. Lokal transkribering — inget moln, ingen internetanslutning krävs.',
+    'hero.subhead': 'En lättviktig skrivbordsapp med öppen källkod som lever i systemfältet. Tryck på en snabbtangent, tala, och text dyker upp i valfri applikation. Lokal transkribering — inget moln, ingen internetanslutning krävs. Gratis för alltid.',
     'hero.cta.mac': 'Ladda ner för macOS',
     'hero.cta.windows': 'Ladda ner för Windows',
 
@@ -89,7 +89,7 @@ export const translations = {
     'privacy.telemetry.desc': 'Ingen analys, ingen användningsspårning, ingen datainsamling av något slag. Appen ringer aldrig hem.',
     'privacy.permissions.title': 'Bara 2 behörigheter',
     'privacy.permissions.desc': 'Mikrofon (för att höra dig) och Tillgänglighet (för att klistra in text). Det är allt. Ingen Full diskåtkomst, ingen Plats, ingen Kamera.',
-    'privacy.opensource': 'Ta inte bara vårt ord för det — granska källkoden.',
+    'privacy.opensource': 'Sagascript har öppen källkod och är gratis för alltid. Ta inte bara vårt ord för det — granska koden.',
     'privacy.github': 'Visa på GitHub',
 
     'download.title': 'Hämta Sagascript',
@@ -104,7 +104,7 @@ export const translations = {
 
   no: {
     'meta.title': 'Sagascript — Privat talediktering',
-    'meta.description': 'Lettvekts skrivebordsapp for talediktering. Trykk en hurtigtast, snakk, tekst dukker opp. Lokal transkripsjon — stemmen din forlater aldri enheten.',
+    'meta.description': 'Gratis skrivebordsapp med åpen kildekode for talediktering. Trykk en hurtigtast, snakk, tekst dukker opp. Lokal transkripsjon — stemmen din forlater aldri enheten.',
 
     'nav.home': 'Hjem',
     'nav.features': 'Funksjoner',
@@ -113,7 +113,7 @@ export const translations = {
     'nav.lang.aria': 'Bytt språk',
 
     'hero.headline': 'Dikter hvor som helst. Privat.',
-    'hero.subhead': 'En lettvekts skrivebordsapp som lever i systemstatusfeltet. Trykk en hurtigtast, snakk, og tekst dukker opp i hvilken som helst applikasjon. Lokal transkripsjon — ingen sky, ingen internettforbindelse nødvendig.',
+    'hero.subhead': 'En lettvekts skrivebordsapp med åpen kildekode som lever i systemstatusfeltet. Trykk en hurtigtast, snakk, og tekst dukker opp i hvilken som helst applikasjon. Lokal transkripsjon — ingen sky, ingen internettforbindelse nødvendig. Gratis for alltid.',
     'hero.cta.mac': 'Last ned for macOS',
     'hero.cta.windows': 'Last ned for Windows',
 
@@ -137,7 +137,7 @@ export const translations = {
     'privacy.telemetry.desc': 'Ingen analyse, ingen brukssporing, ingen datainnsamling av noe slag. Appen ringer aldri hjem.',
     'privacy.permissions.title': 'Bare 2 tillatelser',
     'privacy.permissions.desc': 'Mikrofon (for å høre deg) og Tilgjengelighet (for å lime inn tekst). Det er alt. Ingen Full disktilgang, ingen Posisjon, ingen Kamera.',
-    'privacy.opensource': 'Ikke bare ta vårt ord for det — gjennomgå kildekoden.',
+    'privacy.opensource': 'Sagascript er åpen kildekode og gratis for alltid. Ikke bare ta vårt ord for det — gjennomgå koden.',
     'privacy.github': 'Vis på GitHub',
 
     'download.title': 'Hent Sagascript',
