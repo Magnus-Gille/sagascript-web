@@ -53,6 +53,12 @@ export const translations = {
     'download.windows.title': 'Windows',
     'download.windows.status': 'Coming soon',
 
+    // Support
+    'support.charity': 'Sagascript is free to use, but if you found value in it, consider donating to',
+    'support.charity.link': 'Save the Children',
+    'support.coffee': 'If you already donated and still have some spare change,',
+    'support.coffee.link': 'buy me a coffee',
+
     // Footer
     'footer.built': 'Built by',
     'footer.source': 'Source on GitHub',
@@ -106,6 +112,11 @@ export const translations = {
     'download.windows.title': 'Windows',
     'download.windows.status': 'Kommer snart',
 
+    'support.charity': 'Sagascript är gratis att använda, men om du fann värde i det, överväg att donera till',
+    'support.charity.link': 'Rädda Barnen',
+    'support.coffee': 'Om du redan donerat och fortfarande har lite över,',
+    'support.coffee.link': 'bjud mig på en kaffe',
+
     'footer.built': 'Byggd av',
     'footer.source': 'Källkod på GitHub',
   },
@@ -157,6 +168,11 @@ export const translations = {
     'download.mac.requirements': 'Krever macOS 13.0+ (Apple Silicon)',
     'download.windows.title': 'Windows',
     'download.windows.status': 'Kommer snart',
+
+    'support.charity': 'Sagascript er gratis å bruke, men hvis du fant verdi i det, vurder å donere til',
+    'support.charity.link': 'Redd Barna',
+    'support.coffee': 'Hvis du allerede har donert og fortsatt har litt til overs,',
+    'support.coffee.link': 'kjøp meg en kaffe',
 
     'footer.built': 'Bygget av',
     'footer.source': 'Kildekode på GitHub',

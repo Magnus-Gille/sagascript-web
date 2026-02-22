@@ -1,0 +1,77 @@
+---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+// TODO: Replace with your actual fundraiser / donation page URLs
+const charityUrl = 'https://www.savethechildren.net/';
+const coffeeUrl = 'https://buymeacoffee.com/';
+---
+
+<aside class="support">
+  <div class="container support-inner">
+    <p class="charity">
+      {t('support.charity', locale)}{' '}
+      <a href={charityUrl} target="_blank" rel="noopener noreferrer">
+        {t('support.charity.link', locale)}&nbsp;&hearts;
+      </a>
+    </p>
+    <p class="coffee">
+      {t('support.coffee', locale)}{' '}
+      <a href={coffeeUrl} target="_blank" rel="noopener noreferrer">
+        {t('support.coffee.link', locale)}
+      </a>
+    </p>
+  </div>
+</aside>
+
+<style>
+  .support {
+    padding: 32px 0 16px;
+    text-align: center;
+  }
+
+  .support-inner {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .charity {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .charity a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .charity a:hover {
+    opacity: 0.8;
+  }
+
+  .coffee {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    opacity: 0.7;
+  }
+
+  .coffee a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+
+  .coffee a:hover {
+    color: var(--accent);
+  }
+</style>
