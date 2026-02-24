@@ -48,6 +48,43 @@ const htmlLang = locale === 'sv' ? 'sv' : locale === 'no' ? 'nb' : 'en';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <slot />
+    <div id="password-gate" style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0a0a0a;">
+      <form id="pw-form" style="text-align:center;font-family:system-ui,sans-serif;">
+        <h2 style="color:#fff;margin-bottom:1rem;font-weight:400;">Kommer snart</h2>
+        <input id="pw-input" type="password" placeholder="Lösenord" autocomplete="off"
+          style="padding:0.6rem 1rem;border-radius:8px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:1rem;outline:none;" />
+        <button type="submit"
+          style="margin-left:0.5rem;padding:0.6rem 1.2rem;border-radius:8px;border:none;background:#fff;color:#0a0a0a;font-size:1rem;cursor:pointer;">
+          OK
+        </button>
+        <p id="pw-error" style="color:#f44;margin-top:0.75rem;display:none;font-size:0.9rem;">Fel lösenord</p>
+      </form>
+    </div>
+    <div id="page-content" style="display:none;">
+      <slot />
+    </div>
+    <script is:inline>
+      (function() {
+        var HASH = 'a46a58211d3b636c3fbcbb667464071781a601d656d95e642e2d6c5ee76e8247';
+        if (sessionStorage.getItem('sg_unlocked') === '1') {
+          document.getElementById('password-gate').style.display = 'none';
+          document.getElementById('page-content').style.display = 'block';
+        }
+        document.getElementById('pw-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var pw = document.getElementById('pw-input').value;
+          var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+          var hash = Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+          if (hash === HASH) {
+            sessionStorage.setItem('sg_unlocked', '1');
+            document.getElementById('password-gate').style.display = 'none';
+            document.getElementById('page-content').style.display = 'block';
+          } else {
+            document.getElementById('pw-error').style.display = 'block';
+            document.getElementById('pw-input').value = '';
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
